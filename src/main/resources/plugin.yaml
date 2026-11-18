@@ -15,9 +15,11 @@ spec:
   repo: https://github.com/galaxy-eye/ihalo
   issues: https://github.com/galaxy-eye/ihalo/issues
   displayName: "ihalo AI 写作助手"
-  description: "在文章编辑器中用 AI 写文章、续写、润色、改写与优化排版，支持任意 OpenAI 兼容接口。"
+  description: "在文章编辑器中用 AI 写文章、续写、润色、改写与优化排版。基于 Halo 官方 AI Foundation 插件编排语言模型生成。"
   license:
     - name: "GPL-3.0"
       url: "https://github.com/galaxy-eye/ihalo/blob/main/LICENSE"
+  pluginDependencies:
+    ai-foundation: ">=1.0.0 & <2.0.0"
   settingName: ihalo-settings
   configMapName: ihalo-configmap

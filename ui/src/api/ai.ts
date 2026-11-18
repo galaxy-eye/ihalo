@@ -6,7 +6,6 @@ export interface AiResult {
 
 export interface AiConfig {
   configured: boolean
-  baseUrl: string
   model: string
   modes: string[]
 }
