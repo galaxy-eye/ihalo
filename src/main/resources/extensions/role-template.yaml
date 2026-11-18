@@ -1,0 +1,15 @@
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: ihalo-role-ai
+  labels:
+    halo.run/role-template: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "ihalo AI 助手"
+    rbac.authorization.halo.run/display-name: "使用 AI 助手"
+    rbac.authorization.halo.run/ui-permissions: |
+      ["plugin:ihalo:ai:use"]
+rules:
+  - apiGroups: ["console.api.ihalo.run"]
+    resources: ["ai", "ai/config"]
+    verbs: ["get", "create"]

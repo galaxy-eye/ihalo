@@ -1,0 +1,51 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: ihalo-settings
+spec:
+  forms:
+    - group: ai
+      label: AI 设置
+      formSchema:
+        - $formkit: text
+          name: baseUrl
+          label: 服务地址 / Base URL
+          value: https://api.openai.com/v1
+          placeholder: https://api.openai.com/v1
+          help: 支持 OpenAI 兼容的 Chat Completions 接口地址，结尾无需带 /chat/completions。
+          validation: required|url
+        - $formkit: text
+          name: model
+          label: 模型名称
+          value: gpt-4o-mini
+          placeholder: gpt-4o-mini
+          help: 所使用的模型名称，例如 gpt-4o-mini、deepseek-chat、qwen-plus 等。
+          validation: required
+        - $formkit: secret
+          name: apiKey
+          label: API Key
+          description: 调用 AI 服务的密钥，保存在 Halo Secret 中，不会以明文存储。
+          descriptionPreset: 第三方服务 API
+          requiredKeys:
+            - key: token
+              help: 第三方服务 API Key
+        - $formkit: number
+          name: temperature
+          label: 随机性 temperature
+          value: 0.7
+          help: 取值越大输出越有创造性，范围 0-2。
+        - $formkit: number
+          name: maxTokens
+          label: 最大输出 token
+          value: 2048
+          help: 单次生成的最大 token 数。
+        - $formkit: textarea
+          name: systemPrompt
+          label: 自定义系统提示词（可选）
+          placeholder: 额外的写作要求或风格约束
+          help: 追加到内置提示词之后的补充要求。
+        - $formkit: number
+          name: timeoutSeconds
+          label: 请求超时（秒）
+          value: 60
+          help: 调用 AI 服务的整体超时时间。

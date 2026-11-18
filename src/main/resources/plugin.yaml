@@ -1,0 +1,23 @@
+# Refer https://docs.halo.run/developer-guide/plugin/basics/manifest
+
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  # The name defines how the plugin is invoked, A unique name
+  name: ihalo
+spec:
+  requires: ">=2.25.0"
+  author:
+    name: galaxy-eye
+    website: https://github.com/galaxy-eye
+  logo: logo.png
+  homepage: https://github.com/galaxy-eye/ihalo#readme
+  repo: https://github.com/galaxy-eye/ihalo
+  issues: https://github.com/galaxy-eye/ihalo/issues
+  displayName: "ihalo AI 写作助手"
+  description: "在文章编辑器中用 AI 写文章、续写、润色、改写与优化排版，支持任意 OpenAI 兼容接口。"
+  license:
+    - name: "GPL-3.0"
+      url: "https://github.com/galaxy-eye/ihalo/blob/main/LICENSE"
+  settingName: ihalo-settings
+  configMapName: ihalo-configmap
